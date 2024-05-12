@@ -40,11 +40,18 @@ class MissingNumber {
                 expected++;
             }
 
+            if (stringToCheck.length() < expectedDigits && stringToCheck.length() > 0) {
+                System.out.println("exceeding string");
+                return -1;
+            }
+
             System.out.println("start: " + start);
             System.out.println("expected (start + 1): " + expected);
             System.out.println("remaining: " + stringToCheck);
             System.out.println("length of expected string: " + expectedDigits);
             System.out.println("length of remaining string: " + stringToCheck.length());
+
+
         }
 
         if (missingNumbers.isEmpty()) {
