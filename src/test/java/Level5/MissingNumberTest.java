@@ -19,8 +19,9 @@ class MissingNumberTest {
     }
     @Test
     public void randomTests(){
-//        assertEquals(-1,MissingNumber.missing("9993999499"));
-//        assertEquals(-1,MissingNumber.missing("9929939949"));
+        assertEquals(-1,MissingNumber.missing("9993999499"));
+        assertEquals(-1,MissingNumber.missing("9929939949"));
         assertEquals(999,MissingNumber.missing("9949959969979981000100110021003"));
+        assertEquals(100,MissingNumber.missing("949596979899101102103"));
     }
 }
