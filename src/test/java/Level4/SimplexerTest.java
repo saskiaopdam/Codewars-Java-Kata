@@ -17,12 +17,12 @@ public class SimplexerTest {
     @Test
     public void testSingle() {
         // Identifier
-//        Simplexer lexer = new Simplexer("x");
-//        assertEquals(true, lexer.hasNext());
-//        assertEquals(new Token("x", "identifier"), lexer.next());
+        Simplexer lexer = new Simplexer("x");
+        assertEquals(true, lexer.hasNext());
+        assertEquals(new Token("x", "identifier"), lexer.next());
 
         // Boolean
-        Simplexer lexer = new Simplexer("true");
+        lexer = new Simplexer("true");
         assertEquals(true, lexer.hasNext());
         assertEquals(new Token("true", "boolean"), lexer.next());
 
@@ -42,44 +42,44 @@ public class SimplexerTest {
         assertEquals(new Token("break", "keyword"), lexer.next());
     }
 
-//    @Test
-//    public void testExperession() {
-//        // Simple expression
-//        Simplexer lexer = new Simplexer("(1 + 2) - 5");
-//        assertEquals(Arrays.asList(new Token[] {
-//                new Token("(", "operator"),
-//                new Token("1", "integer"),
-//                new Token(" ", "whitespace"),
-//                new Token("+", "operator"),
-//                new Token(" ", "whitespace"),
-//                new Token("2", "integer"),
-//                new Token(")", "operator"),
-//                new Token(" ", "whitespace"),
-//                new Token("-", "operator"),
-//                new Token(" ", "whitespace"),
-//                new Token("5", "integer")
-//        }), toList(lexer));
-//    }
+    @Test
+    public void testExperession() {
+        // Simple expression
+        Simplexer lexer = new Simplexer("(1 + 2) - 5");
+        assertEquals(Arrays.asList(new Token[] {
+                new Token("(", "operator"),
+                new Token("1", "integer"),
+                new Token(" ", "whitespace"),
+                new Token("+", "operator"),
+                new Token(" ", "whitespace"),
+                new Token("2", "integer"),
+                new Token(")", "operator"),
+                new Token(" ", "whitespace"),
+                new Token("-", "operator"),
+                new Token(" ", "whitespace"),
+                new Token("5", "integer")
+        }), toList(lexer));
+    }
 
-//    @Test
-//    public void testStatement() {
-//        // Simple statement.
-//        Simplexer lexer = new Simplexer("return x + 1");
-//        assertEquals(Arrays.asList(new Token[] {
-//                new Token("return", "keyword"),
-//                new Token(" ", "whitespace"),
-//                new Token("x", "identifier"),
-//                new Token(" ", "whitespace"),
-//                new Token("+", "operator"),
-//                new Token(" ", "whitespace"),
-//                new Token("1", "integer")
-//        }), toList(lexer));
-//    }
+    @Test
+    public void testStatement() {
+        // Simple statement.
+        Simplexer lexer = new Simplexer("return x + 1");
+        assertEquals(Arrays.asList(new Token[] {
+                new Token("return", "keyword"),
+                new Token(" ", "whitespace"),
+                new Token("x", "identifier"),
+                new Token(" ", "whitespace"),
+                new Token("+", "operator"),
+                new Token(" ", "whitespace"),
+                new Token("1", "integer")
+        }), toList(lexer));
+    }
 
-//    private List<Token> toList(Simplexer lexer) {
-//        List<Token> tokens = new ArrayList<>();
-//        lexer.forEachRemaining(tokens::add);
-//        return tokens;
-//    }
+    private List<Token> toList(Simplexer lexer) {
+        List<Token> tokens = new ArrayList<>();
+        lexer.forEachRemaining(tokens::add);
+        return tokens;
+    }
 
 }
