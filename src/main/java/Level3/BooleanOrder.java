@@ -2,7 +2,6 @@
 package Level3;
 
 import java.math.BigInteger;
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -23,17 +22,6 @@ public class BooleanOrder {
     }
 
     public BigInteger solve() {
-        BigInteger count = computeCount(operands, operators);
-        System.out.println("count: " + count);
-        return count;
-    }
-
-    private BigInteger computeCount(String operands, String operators)  {
-        System.out.println("operands: " + operands + " , operators: " + operators);
-
-//        solve("tft","^&")
-//        "((t ^ f) & t)" = True
-//        "(t ^ (f & t))" = True
 
         BigInteger count = BigInteger.ZERO;
 
@@ -53,11 +41,12 @@ public class BooleanOrder {
 
         if (evaluatesToTrue(expression))  {
             count = count.add(BigInteger.ONE);
+
         }
 
+        System.out.println("count: " + count);
         return count;
     }
-
 
     private Boolean evaluatesToTrue(String expression) {
 
@@ -86,7 +75,5 @@ public class BooleanOrder {
         }
 
         return result;
-
     }
-
 }
